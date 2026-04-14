@@ -1,5 +1,5 @@
 app_name = "omnexa_reporting_compliance"
-app_title = "Omnexa Reporting Compliance"
+app_title = "ErpGenEx — Reporting Compliance"
 app_publisher = "Omnexa"
 app_description = "Shared reporting and compliance services"
 app_email = "dev@omnexa.com"
