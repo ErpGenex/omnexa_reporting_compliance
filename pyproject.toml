@@ -1,7 +1,7 @@
 [project]
 name = "omnexa_reporting_compliance"
 authors = [
-    { name = "Omnexa", email = "dev@omnexa.com"}
+    { name = "ErpGenEx", email = "dev@erpgenex.com"}
 ]
 description = "Shared reporting and compliance services"
 requires-python = ">=3.10"
