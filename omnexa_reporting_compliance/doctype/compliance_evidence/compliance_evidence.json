@@ -1,0 +1,97 @@
+{
+	"actions": [],
+	"autoname": "hash",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"company",
+		"control",
+		"exception",
+		"remediation",
+		"collected_on",
+		"reference_doctype",
+		"reference_name",
+		"attachment",
+		"notes"
+	],
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "control",
+			"fieldtype": "Link",
+			"label": "Control",
+			"options": "Compliance Control",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "exception",
+			"fieldtype": "Link",
+			"label": "Exception",
+			"options": "Compliance Exception"
+		},
+		{
+			"fieldname": "remediation",
+			"fieldtype": "Link",
+			"label": "Remediation",
+			"options": "Compliance Remediation"
+		},
+		{
+			"fieldname": "collected_on",
+			"fieldtype": "Date",
+			"label": "Collected On",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "reference_doctype",
+			"fieldtype": "Data",
+			"label": "Reference DocType (optional)"
+		},
+		{
+			"fieldname": "reference_name",
+			"fieldtype": "Data",
+			"label": "Reference Name (optional)"
+		},
+		{
+			"fieldname": "attachment",
+			"fieldtype": "Attach",
+			"label": "Attachment"
+		},
+		{
+			"fieldname": "notes",
+			"fieldtype": "Small Text",
+			"label": "Notes"
+		}
+	],
+	"grid_page_length": 50,
+	"index_web_pages_for_search": 1,
+	"links": [],
+	"module": "Omnexa Reporting Compliance",
+	"name": "Compliance Evidence",
+	"naming_rule": "Random",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}
+

@@ -1,0 +1,98 @@
+{
+	"actions": [],
+	"autoname": "hash",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"company",
+		"control",
+		"control_test",
+		"severity",
+		"status",
+		"opened_on",
+		"closed_on",
+		"description"
+	],
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "control",
+			"fieldtype": "Link",
+			"label": "Control",
+			"options": "Compliance Control",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "control_test",
+			"fieldtype": "Link",
+			"label": "Control Test",
+			"options": "Compliance Control Test"
+		},
+		{
+			"default": "Medium",
+			"fieldname": "severity",
+			"fieldtype": "Select",
+			"label": "Severity",
+			"options": "Low\nMedium\nHigh\nCritical",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"default": "Open",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "Open\nIn Progress\nResolved\nClosed",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "opened_on",
+			"fieldtype": "Date",
+			"label": "Opened On",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "closed_on",
+			"fieldtype": "Date",
+			"label": "Closed On"
+		},
+		{
+			"fieldname": "description",
+			"fieldtype": "Small Text",
+			"label": "Description"
+		}
+	],
+	"grid_page_length": 50,
+	"index_web_pages_for_search": 1,
+	"links": [],
+	"module": "Omnexa Reporting Compliance",
+	"name": "Compliance Exception",
+	"naming_rule": "Random",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}
+

@@ -1,0 +1,104 @@
+{
+	"actions": [],
+	"autoname": "hash",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"company",
+		"title",
+		"status",
+		"risk_level",
+		"control_owner",
+		"enabled",
+		"column_break_1",
+		"app_scope",
+		"description"
+	],
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "title",
+			"fieldtype": "Data",
+			"label": "Control Title",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"default": "Active",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "Draft\nActive\nRetired",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"default": "Medium",
+			"fieldname": "risk_level",
+			"fieldtype": "Select",
+			"label": "Risk Level",
+			"options": "Low\nMedium\nHigh\nCritical",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "control_owner",
+			"fieldtype": "Link",
+			"label": "Control Owner",
+			"options": "User"
+		},
+		{
+			"default": "1",
+			"fieldname": "enabled",
+			"fieldtype": "Check",
+			"label": "Enabled"
+		},
+		{
+			"fieldname": "column_break_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "app_scope",
+			"fieldtype": "Data",
+			"label": "App Scope (optional)",
+			"description": "Example: omnexa_trading"
+		},
+		{
+			"fieldname": "description",
+			"fieldtype": "Small Text",
+			"label": "Description"
+		}
+	],
+	"grid_page_length": 50,
+	"index_web_pages_for_search": 1,
+	"links": [],
+	"module": "Omnexa Reporting Compliance",
+	"name": "Compliance Control",
+	"naming_rule": "Random",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}
+
