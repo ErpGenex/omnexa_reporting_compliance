@@ -11,15 +11,15 @@ app_license = "mit"
 required_apps = ["omnexa_core"]
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "omnexa_reporting_compliance",
-# 		"logo": "/assets/omnexa_reporting_compliance/logo.png",
-# 		"title": "Omnexa Reporting Compliance",
-# 		"route": "/omnexa_reporting_compliance",
-# 		"has_permission": "omnexa_reporting_compliance.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "omnexa_reporting_compliance",
+		"logo": "/assets/omnexa_reporting_compliance/logo.png",
+		"title": "Omnexa Reporting Compliance",
+		"route": "/app/compliance-control",
+		"has_permission": "omnexa_reporting_compliance.permission.has_app_permission",
+	}
+]
 
 # Includes in <head>
 # ------------------
@@ -121,9 +121,21 @@ before_migrate = "omnexa_reporting_compliance.install.enforce_supported_frappe_v
 # 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
 # }
 #
-# has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
-# }
+has_permission = {
+	"Compliance Control": "omnexa_reporting_compliance.permission.has_doctype_permission",
+	"Compliance Control Test": "omnexa_reporting_compliance.permission.has_doctype_permission",
+	"Compliance Exception": "omnexa_reporting_compliance.permission.has_doctype_permission",
+	"Compliance Remediation": "omnexa_reporting_compliance.permission.has_doctype_permission",
+	"Compliance Evidence": "omnexa_reporting_compliance.permission.has_doctype_permission",
+}
+
+permission_query_conditions = {
+	"Compliance Control": "omnexa_reporting_compliance.permission.get_doctype_permission_query_conditions",
+	"Compliance Control Test": "omnexa_reporting_compliance.permission.get_doctype_permission_query_conditions",
+	"Compliance Exception": "omnexa_reporting_compliance.permission.get_doctype_permission_query_conditions",
+	"Compliance Remediation": "omnexa_reporting_compliance.permission.get_doctype_permission_query_conditions",
+	"Compliance Evidence": "omnexa_reporting_compliance.permission.get_doctype_permission_query_conditions",
+}
 
 # DocType Class
 # ---------------
@@ -196,7 +208,10 @@ before_migrate = "omnexa_reporting_compliance.install.enforce_supported_frappe_v
 
 # Request Events
 # ----------------
-before_request = ["omnexa_reporting_compliance.license_gate.before_request"]
+before_request = [
+	"omnexa_reporting_compliance.permission.before_request",
+	"omnexa_reporting_compliance.license_gate.before_request",
+]
 # after_request = ["omnexa_reporting_compliance.utils.after_request"]
 
 # Job Events
