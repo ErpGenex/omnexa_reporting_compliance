@@ -84,6 +84,7 @@ add_to_apps_screen = [
 
 before_install = "omnexa_reporting_compliance.install.enforce_supported_frappe_version"
 before_migrate = "omnexa_reporting_compliance.install.enforce_supported_frappe_version"
+after_migrate = "omnexa_reporting_compliance.install.after_migrate"
 
 # Uninstallation
 # ------------

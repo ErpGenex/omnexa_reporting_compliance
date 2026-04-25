@@ -5,7 +5,13 @@ import frappe
 from frappe import _
 
 
+def _table_exists(table_name: str) -> bool:
+	return bool(frappe.db.sql("show tables like %s", (table_name,)))
+
+
 def execute(filters=None):
+	if not _table_exists("tabCompliance Control Test"):
+		return _columns(), []
 	rows = frappe.db.sql(
 		"""
 		SELECT
@@ -22,7 +28,11 @@ def execute(filters=None):
 		""",
 		as_dict=True,
 	)
-	columns = [
+	return _columns(), rows
+
+
+def _columns():
+	return [
 		{"label": _("Company"), "fieldname": "company", "fieldtype": "Link", "options": "Company", "width": 160},
 		{"label": _("Control"), "fieldname": "control", "fieldtype": "Link", "options": "Compliance Control", "width": 220},
 		{"label": _("Test Date"), "fieldname": "test_date", "fieldtype": "Date", "width": 110},
@@ -30,5 +40,4 @@ def execute(filters=None):
 		{"label": _("Result"), "fieldname": "result", "fieldtype": "Data", "width": 90},
 		{"label": _("Test"), "fieldname": "control_test", "fieldtype": "Link", "options": "Compliance Control Test", "width": 200},
 	]
-	return columns, rows
 

@@ -7,6 +7,10 @@ import frappe
 from frappe import _
 
 
+def _table_exists(table_name: str) -> bool:
+	return bool(frappe.db.sql("show tables like %s", (table_name,)))
+
+
 def execute(filters=None):
 	filters = filters or {}
 	try:
@@ -20,6 +24,9 @@ def execute(filters=None):
 	if days:
 		values["cutoff_date"] = frappe.utils.add_days(frappe.utils.today(), -days)
 		where = "WHERE e.collected_on IS NOT NULL AND e.collected_on <= %(cutoff_date)s"
+
+	if not _table_exists("tabCompliance Evidence"):
+		return _columns(), []
 
 	rows = frappe.db.sql(
 		f"""
@@ -39,7 +46,11 @@ def execute(filters=None):
 		values=values,
 		as_dict=True,
 	)
-	columns = [
+	return _columns(), rows
+
+
+def _columns():
+	return [
 		{"label": _("Company"), "fieldname": "company", "fieldtype": "Link", "options": "Company", "width": 160},
 		{"label": _("Control"), "fieldname": "control", "fieldtype": "Link", "options": "Compliance Control", "width": 200},
 		{"label": _("Exception"), "fieldname": "exception", "fieldtype": "Link", "options": "Compliance Exception", "width": 200},
@@ -48,5 +59,4 @@ def execute(filters=None):
 		{"label": _("Attachment"), "fieldname": "attachment", "fieldtype": "Data", "width": 220},
 		{"label": _("Evidence"), "fieldname": "evidence", "fieldtype": "Link", "options": "Compliance Evidence", "width": 200},
 	]
-	return columns, rows
 
