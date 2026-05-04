@@ -7,10 +7,10 @@
  "doctype": "Report",
  "filters": [],
  "is_standard": "Yes",
- "module": "Omnexa Reporting Compliance",
- "name": "Failed Control Tests",
- "ref_doctype": "Compliance Control Test",
- "report_name": "Failed Control Tests",
+ "module": "Reporting Compliance",
+ "name": "Open Remediations",
+ "ref_doctype": "Compliance Remediation",
+ "report_name": "Open Remediations",
  "report_type": "Script Report",
  "roles": [
   {"role": "System Manager"}

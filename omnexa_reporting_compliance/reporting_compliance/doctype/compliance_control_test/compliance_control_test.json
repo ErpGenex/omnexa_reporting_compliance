@@ -6,12 +6,9 @@
 	"field_order": [
 		"company",
 		"control",
-		"exception",
-		"remediation",
-		"collected_on",
-		"reference_doctype",
-		"reference_name",
-		"attachment",
+		"test_date",
+		"result",
+		"tester",
 		"notes"
 	],
 	"fields": [
@@ -28,40 +25,30 @@
 			"fieldtype": "Link",
 			"label": "Control",
 			"options": "Compliance Control",
+			"reqd": 1,
 			"in_list_view": 1
 		},
 		{
-			"fieldname": "exception",
-			"fieldtype": "Link",
-			"label": "Exception",
-			"options": "Compliance Exception"
-		},
-		{
-			"fieldname": "remediation",
-			"fieldtype": "Link",
-			"label": "Remediation",
-			"options": "Compliance Remediation"
-		},
-		{
-			"fieldname": "collected_on",
+			"fieldname": "test_date",
 			"fieldtype": "Date",
-			"label": "Collected On",
+			"label": "Test Date",
+			"reqd": 1,
 			"in_list_view": 1
 		},
 		{
-			"fieldname": "reference_doctype",
-			"fieldtype": "Data",
-			"label": "Reference DocType (optional)"
+			"default": "Pass",
+			"fieldname": "result",
+			"fieldtype": "Select",
+			"label": "Result",
+			"options": "Pass\nFail\nNot Applicable",
+			"reqd": 1,
+			"in_list_view": 1
 		},
 		{
-			"fieldname": "reference_name",
-			"fieldtype": "Data",
-			"label": "Reference Name (optional)"
-		},
-		{
-			"fieldname": "attachment",
-			"fieldtype": "Attach",
-			"label": "Attachment"
+			"fieldname": "tester",
+			"fieldtype": "Link",
+			"label": "Tester",
+			"options": "User"
 		},
 		{
 			"fieldname": "notes",
@@ -72,8 +59,8 @@
 	"grid_page_length": 50,
 	"index_web_pages_for_search": 1,
 	"links": [],
-	"module": "Omnexa Reporting Compliance",
-	"name": "Compliance Evidence",
+	"module": "Reporting Compliance",
+	"name": "Compliance Control Test",
 	"naming_rule": "Random",
 	"permissions": [
 		{

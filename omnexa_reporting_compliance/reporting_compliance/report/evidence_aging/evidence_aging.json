@@ -7,7 +7,7 @@
  "doctype": "Report",
  "filters": [],
  "is_standard": "Yes",
- "module": "Omnexa Reporting Compliance",
+ "module": "Reporting Compliance",
  "name": "Evidence Aging",
  "ref_doctype": "Compliance Evidence",
  "report_name": "Evidence Aging",

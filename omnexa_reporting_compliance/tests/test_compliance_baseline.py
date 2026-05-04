@@ -5,7 +5,7 @@ import os
 
 
 def _ensure_compliance_doctypes():
-	base = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+	base = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "reporting_compliance"))
 	for rel in (
 		("doctype", "compliance_control", "compliance_control.json"),
 		("doctype", "compliance_control_test", "compliance_control_test.json"),
@@ -31,10 +31,18 @@ class TestComplianceBaseline(FrappeTestCase):
 			self.assertEqual(meta.name, dt)
 
 	def test_reports_execute(self):
-		from omnexa_reporting_compliance.report.controls_coverage.controls_coverage import execute as controls_execute
-		from omnexa_reporting_compliance.report.evidence_aging.evidence_aging import execute as evidence_execute
-		from omnexa_reporting_compliance.report.failed_control_tests.failed_control_tests import execute as failed_execute
-		from omnexa_reporting_compliance.report.open_remediations.open_remediations import execute as open_execute
+		from omnexa_reporting_compliance.reporting_compliance.report.controls_coverage.controls_coverage import (
+			execute as controls_execute,
+		)
+		from omnexa_reporting_compliance.reporting_compliance.report.evidence_aging.evidence_aging import (
+			execute as evidence_execute,
+		)
+		from omnexa_reporting_compliance.reporting_compliance.report.failed_control_tests.failed_control_tests import (
+			execute as failed_execute,
+		)
+		from omnexa_reporting_compliance.reporting_compliance.report.open_remediations.open_remediations import (
+			execute as open_execute,
+		)
 
 		for fn, filters in (
 			(controls_execute, None),

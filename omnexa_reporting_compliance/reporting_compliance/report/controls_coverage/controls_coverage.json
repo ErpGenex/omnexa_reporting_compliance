@@ -7,7 +7,7 @@
  "doctype": "Report",
  "filters": [],
  "is_standard": "Yes",
- "module": "Omnexa Reporting Compliance",
+ "module": "Reporting Compliance",
  "name": "Controls Coverage",
  "ref_doctype": "Compliance Control",
  "report_name": "Controls Coverage",

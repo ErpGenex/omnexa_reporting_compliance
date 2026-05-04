@@ -5,12 +5,13 @@
 	"engine": "InnoDB",
 	"field_order": [
 		"company",
-		"control",
-		"control_test",
-		"severity",
+		"title",
 		"status",
-		"opened_on",
-		"closed_on",
+		"risk_level",
+		"control_owner",
+		"enabled",
+		"column_break_1",
+		"app_scope",
 		"description"
 	],
 	"fields": [
@@ -23,46 +24,51 @@
 			"in_list_view": 1
 		},
 		{
-			"fieldname": "control",
-			"fieldtype": "Link",
-			"label": "Control",
-			"options": "Compliance Control",
+			"fieldname": "title",
+			"fieldtype": "Data",
+			"label": "Control Title",
+			"reqd": 1,
 			"in_list_view": 1
 		},
 		{
-			"fieldname": "control_test",
-			"fieldtype": "Link",
-			"label": "Control Test",
-			"options": "Compliance Control Test"
+			"default": "Active",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "Draft\nActive\nRetired",
+			"reqd": 1,
+			"in_list_view": 1
 		},
 		{
 			"default": "Medium",
-			"fieldname": "severity",
+			"fieldname": "risk_level",
 			"fieldtype": "Select",
-			"label": "Severity",
+			"label": "Risk Level",
 			"options": "Low\nMedium\nHigh\nCritical",
 			"reqd": 1,
 			"in_list_view": 1
 		},
 		{
-			"default": "Open",
-			"fieldname": "status",
-			"fieldtype": "Select",
-			"label": "Status",
-			"options": "Open\nIn Progress\nResolved\nClosed",
-			"reqd": 1,
-			"in_list_view": 1
+			"fieldname": "control_owner",
+			"fieldtype": "Link",
+			"label": "Control Owner",
+			"options": "User"
 		},
 		{
-			"fieldname": "opened_on",
-			"fieldtype": "Date",
-			"label": "Opened On",
-			"in_list_view": 1
+			"default": "1",
+			"fieldname": "enabled",
+			"fieldtype": "Check",
+			"label": "Enabled"
 		},
 		{
-			"fieldname": "closed_on",
-			"fieldtype": "Date",
-			"label": "Closed On"
+			"fieldname": "column_break_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "app_scope",
+			"fieldtype": "Data",
+			"label": "App Scope (optional)",
+			"description": "Example: omnexa_trading"
 		},
 		{
 			"fieldname": "description",
@@ -73,8 +79,8 @@
 	"grid_page_length": 50,
 	"index_web_pages_for_search": 1,
 	"links": [],
-	"module": "Omnexa Reporting Compliance",
-	"name": "Compliance Exception",
+	"module": "Reporting Compliance",
+	"name": "Compliance Control",
 	"naming_rule": "Random",
 	"permissions": [
 		{
