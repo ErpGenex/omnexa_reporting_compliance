@@ -4,6 +4,7 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"company",
 		"control",
 		"control_test",
@@ -14,6 +15,11 @@
 		"description"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
 		{
 			"fieldname": "company",
 			"fieldtype": "Link",
@@ -95,4 +101,3 @@
 	"states": [],
 	"track_changes": 1
 }
-
