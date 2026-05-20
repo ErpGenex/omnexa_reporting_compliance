@@ -58,3 +58,10 @@ def get_finance_super_dashboard() -> dict:
 			"snapshots_total": sum(int((x.get("governance") or {}).get("snapshots_total", 0) or 0) for x in apps),
 		},
 	}
+
+
+@frappe.whitelist()
+def preview_grc_kpi(scenario: str | None = None, params: str | None = None) -> dict:
+	from omnexa_core.omnexa_core.parity_api import preview_grc_kpi as _p
+
+	return _p("reporting_compliance", scenario=scenario, params=params)
