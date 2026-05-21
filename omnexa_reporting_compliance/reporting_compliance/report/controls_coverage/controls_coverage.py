@@ -4,35 +4,37 @@
 import frappe
 from frappe import _
 
+from omnexa_core.omnexa_core.report_print.report_query_filters import (
+	get_all_filters,
+	policy_version_filters,
+	prepare_filters,
+	sql_conditions,
+)
 
-def _table_exists(table_name: str) -> bool:
-	return bool(frappe.db.sql("show tables like %s", (table_name,)))
 
 
 def execute(filters=None):
-	if not _table_exists("tabCompliance Control"):
-		return _columns(), []
-	rows = frappe.db.sql(
-		"""
-		SELECT
-			cc.company AS company,
-			cc.status AS status,
-			cc.risk_level AS risk_level,
-			COUNT(*) AS controls_count
-		FROM `tabCompliance Control` cc
-		GROUP BY cc.company, cc.status, cc.risk_level
-		ORDER BY cc.company, cc.status, cc.risk_level
-		""",
-		as_dict=True,
-	)
-	return _columns(), rows
-
-
-def _columns():
-	return [
+	columns = [
 		{"label": _("Company"), "fieldname": "company", "fieldtype": "Link", "options": "Company", "width": 180},
 		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 110},
 		{"label": _("Risk Level"), "fieldname": "risk_level", "fieldtype": "Data", "width": 120},
 		{"label": _("Controls"), "fieldname": "controls_count", "fieldtype": "Int", "width": 120},
 	]
-
+	filters = prepare_filters(filters)
+	conditions, params = sql_conditions(filters, "Compliance Control", date_field="creation", company=True, branch=True)
+	rows = frappe.db.sql(
+		f"""
+		SELECT
+			cc.company AS company,
+			cc.status AS status,
+			cc.risk_level AS risk_level,
+			COUNT(*) AS controls_count
+		FROM `tabCompliance Control`
+		WHERE {' AND '.join(conditions)}
+		GROUP BY cc.company, cc.status, cc.risk_level
+		ORDER BY cc.company, cc.status, cc.risk_level
+		""",
+		params,
+		as_dict=True,
+	)
+	return columns, rows

@@ -5,7 +5,14 @@
  "disabled": 0,
  "docstatus": 0,
  "doctype": "Report",
- "filters": [],
+ "filters": [
+  {
+   "fieldname": "older_than_days",
+   "fieldtype": "Data",
+   "label": "Older Than Days",
+   "width": "180px"
+  }
+ ],
  "is_standard": "Yes",
  "module": "Reporting Compliance",
  "name": "Evidence Aging",
@@ -13,7 +20,8 @@
  "report_name": "Evidence Aging",
  "report_type": "Script Report",
  "roles": [
-  {"role": "System Manager"}
+  {
+   "role": "System Manager"
+  }
  ]
 }
-
