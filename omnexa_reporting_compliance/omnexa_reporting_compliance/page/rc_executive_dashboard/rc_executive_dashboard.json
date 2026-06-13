@@ -1,0 +1,16 @@
+{
+	"doctype": "Page",
+	"module": "Reporting Compliance",
+	"name": "rc-executive-dashboard",
+	"page_name": "rc-executive-dashboard",
+	"standard": "Yes",
+	"title": "Executive Dashboard",
+	"roles": [
+		{
+			"role": "System Manager"
+		},
+		{
+			"role": "All"
+		}
+	]
+}
