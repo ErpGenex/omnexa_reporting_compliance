@@ -6,6 +6,8 @@ from datetime import datetime, timezone
 import frappe
 from frappe import _
 
+from omnexa_core.omnexa_core.utils.report_charts import auto_chart_for_columns
+
 
 def _table_exists(table_name: str) -> bool:
 	return bool(frappe.db.sql("show tables like %s", (table_name,)))
@@ -46,7 +48,9 @@ def execute(filters=None):
 		values=values,
 		as_dict=True,
 	)
-	return _columns(), rows
+	columns = _columns()
+	chart = auto_chart_for_columns(rows, columns)
+	return columns, rows, None, chart
 
 
 def _columns():
