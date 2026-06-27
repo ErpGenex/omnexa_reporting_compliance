@@ -31,7 +31,7 @@ def execute(filters=None):
 			cc.status AS status,
 			cc.risk_level AS risk_level,
 			COUNT(*) AS controls_count
-		FROM `tabCompliance Control`
+		FROM `tabCompliance Control` cc
 		WHERE {' AND '.join(conditions)}
 		GROUP BY cc.company, cc.status, cc.risk_level
 		ORDER BY cc.company, cc.status, cc.risk_level

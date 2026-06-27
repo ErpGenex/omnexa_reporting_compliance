@@ -50,7 +50,8 @@ class TestComplianceBaseline(FrappeTestCase):
 			(open_execute, None),
 			(evidence_execute, {"older_than_days": 0}),
 		):
-			cols, rows = fn(filters)
+			result = fn(filters)
+			cols, rows = result[0], result[1]
 			self.assertIsInstance(cols, list)
 			self.assertIsInstance(rows, list)
 

@@ -37,9 +37,9 @@ def execute(filters=None):
 			r.due_date AS due_date,
 			r.completed_on AS completed_on,
 			r.name AS remediation
-		FROM `tabCompliance Remediation`
+		FROM `tabCompliance Remediation` r
 		WHERE {' AND '.join(conditions)}
-		GROUP BY 1
+		GROUP BY r.company, r.exception, r.status, r.owner_user, r.due_date, r.completed_on, r.name
 		ORDER BY IFNULL(r.due_date, '9999-12-31') ASC, r.modified DESC
 		LIMIT 1000
 		""",
