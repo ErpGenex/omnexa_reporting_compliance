@@ -17,13 +17,20 @@ from omnexa_core.omnexa_core.report_print.report_query_filters import (
 
 def execute(filters=None):
 	columns = [
-		{"label": _("Company"), "fieldname": "company", "fieldtype": "Link", "options": "Company", "width": 160},
-		{"label": _("Exception"), "fieldname": "exception", "fieldtype": "Link", "options": "Compliance Exception", "width": 220},
-		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 120},
-		{"label": _("Owner"), "fieldname": "owner_user", "fieldtype": "Link", "options": "User", "width": 140},
-		{"label": _("Due Date"), "fieldname": "due_date", "fieldtype": "Date", "width": 110},
-		{"label": _("Completed On"), "fieldname": "completed_on", "fieldtype": "Date", "width": 110},
-		{"label": _("Remediation"), "fieldname": "remediation", "fieldtype": "Link", "options": "Compliance Remediation", "width": 200},
+		{"label": _("Company"), "fieldname": "company", "fieldtype": "Link", "options": "Company", "width": 160
+	},
+		{"label": _("Exception"), "fieldname": "exception", "fieldtype": "Link", "options": "Compliance Exception", "width": 220
+	},
+		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Owner"), "fieldname": "owner_user", "fieldtype": "Link", "options": "User", "width": 140
+	},
+		{"label": _("Due Date"), "fieldname": "due_date", "fieldtype": "Date", "width": 110
+	},
+		{"label": _("Completed On"), "fieldname": "completed_on", "fieldtype": "Date", "width": 110
+	},
+		{"label": _("Remediation"), "fieldname": "remediation", "fieldtype": "Link", "options": "Compliance Remediation", "width": 200
+	},
 	]
 	filters = prepare_filters(filters)
 	conditions, params = sql_conditions(filters, "Compliance Remediation", date_field="creation", company=True, branch=True)

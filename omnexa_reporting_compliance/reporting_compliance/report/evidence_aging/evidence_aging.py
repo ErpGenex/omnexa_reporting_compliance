@@ -55,12 +55,19 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Company"), "fieldname": "company", "fieldtype": "Link", "options": "Company", "width": 160},
-		{"label": _("Control"), "fieldname": "control", "fieldtype": "Link", "options": "Compliance Control", "width": 200},
-		{"label": _("Exception"), "fieldname": "exception", "fieldtype": "Link", "options": "Compliance Exception", "width": 200},
-		{"label": _("Remediation"), "fieldname": "remediation", "fieldtype": "Link", "options": "Compliance Remediation", "width": 200},
-		{"label": _("Collected On"), "fieldname": "collected_on", "fieldtype": "Date", "width": 120},
-		{"label": _("Attachment"), "fieldname": "attachment", "fieldtype": "Data", "width": 220},
-		{"label": _("Evidence"), "fieldname": "evidence", "fieldtype": "Link", "options": "Compliance Evidence", "width": 200},
+		{"label": _("Company"), "fieldname": "company", "fieldtype": "Link", "options": "Company", "width": 160
+	},
+		{"label": _("Control"), "fieldname": "control", "fieldtype": "Link", "options": "Compliance Control", "width": 200
+	},
+		{"label": _("Exception"), "fieldname": "exception", "fieldtype": "Link", "options": "Compliance Exception", "width": 200
+	},
+		{"label": _("Remediation"), "fieldname": "remediation", "fieldtype": "Link", "options": "Compliance Remediation", "width": 200
+	},
+		{"label": _("Collected On"), "fieldname": "collected_on", "fieldtype": "Date", "width": 120
+	},
+		{"label": _("Attachment"), "fieldname": "attachment", "fieldtype": "Data", "width": 220
+	},
+		{"label": _("Evidence"), "fieldname": "evidence", "fieldtype": "Link", "options": "Compliance Evidence", "width": 200
+	},
 	]
 

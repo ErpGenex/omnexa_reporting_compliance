@@ -17,10 +17,14 @@ from omnexa_core.omnexa_core.report_print.report_query_filters import (
 
 def execute(filters=None):
 	columns = [
-		{"label": _("Company"), "fieldname": "company", "fieldtype": "Link", "options": "Company", "width": 180},
-		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 110},
-		{"label": _("Risk Level"), "fieldname": "risk_level", "fieldtype": "Data", "width": 120},
-		{"label": _("Controls"), "fieldname": "controls_count", "fieldtype": "Int", "width": 120},
+		{"label": _("Company"), "fieldname": "company", "fieldtype": "Link", "options": "Company", "width": 180
+	},
+		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 110
+	},
+		{"label": _("Risk Level"), "fieldname": "risk_level", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Controls"), "fieldname": "controls_count", "fieldtype": "Int", "width": 120
+	},
 	]
 	filters = prepare_filters(filters)
 	conditions, params = sql_conditions(filters, "Compliance Control", date_field="creation", company=True, branch=True)

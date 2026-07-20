@@ -17,12 +17,18 @@ from omnexa_core.omnexa_core.report_print.report_query_filters import (
 
 def execute(filters=None):
 	columns = [
-		{"label": _("Company"), "fieldname": "company", "fieldtype": "Link", "options": "Company", "width": 160},
-		{"label": _("Control"), "fieldname": "control", "fieldtype": "Link", "options": "Compliance Control", "width": 220},
-		{"label": _("Test Date"), "fieldname": "test_date", "fieldtype": "Date", "width": 110},
-		{"label": _("Tester"), "fieldname": "tester", "fieldtype": "Link", "options": "User", "width": 140},
-		{"label": _("Result"), "fieldname": "result", "fieldtype": "Data", "width": 90},
-		{"label": _("Test"), "fieldname": "control_test", "fieldtype": "Link", "options": "Compliance Control Test", "width": 200},
+		{"label": _("Company"), "fieldname": "company", "fieldtype": "Link", "options": "Company", "width": 160
+	},
+		{"label": _("Control"), "fieldname": "control", "fieldtype": "Link", "options": "Compliance Control", "width": 220
+	},
+		{"label": _("Test Date"), "fieldname": "test_date", "fieldtype": "Date", "width": 110
+	},
+		{"label": _("Tester"), "fieldname": "tester", "fieldtype": "Link", "options": "User", "width": 140
+	},
+		{"label": _("Result"), "fieldname": "result", "fieldtype": "Data", "width": 90
+	},
+		{"label": _("Test"), "fieldname": "control_test", "fieldtype": "Link", "options": "Compliance Control Test", "width": 200
+	},
 	]
 	filters = prepare_filters(filters)
 	conditions, params = sql_conditions(

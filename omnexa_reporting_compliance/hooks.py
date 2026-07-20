@@ -17,7 +17,7 @@ add_to_apps_screen = [
 		"logo": "/assets/omnexa_reporting_compliance/logo.png",
 		"title": "Omnexa Reporting Compliance",
 		"route": "/app/compliance-control",
-		"has_permission": "omnexa_reporting_compliance.permission.has_app_permission",
+		"has_permission": "omnexa_reporting_compliance.permission.has_app_permission"
 	}
 ]
 
@@ -127,16 +127,16 @@ has_permission = {
 	"Compliance Control Test": "omnexa_reporting_compliance.permission.has_doctype_permission",
 	"Compliance Exception": "omnexa_reporting_compliance.permission.has_doctype_permission",
 	"Compliance Remediation": "omnexa_reporting_compliance.permission.has_doctype_permission",
-	"Compliance Evidence": "omnexa_reporting_compliance.permission.has_doctype_permission",
-}
+	"Compliance Evidence": "omnexa_reporting_compliance.permission.has_doctype_permission"
+	}
 
 permission_query_conditions = {
 	"Compliance Control": "omnexa_reporting_compliance.permission.get_doctype_permission_query_conditions",
 	"Compliance Control Test": "omnexa_reporting_compliance.permission.get_doctype_permission_query_conditions",
 	"Compliance Exception": "omnexa_reporting_compliance.permission.get_doctype_permission_query_conditions",
 	"Compliance Remediation": "omnexa_reporting_compliance.permission.get_doctype_permission_query_conditions",
-	"Compliance Evidence": "omnexa_reporting_compliance.permission.get_doctype_permission_query_conditions",
-}
+	"Compliance Evidence": "omnexa_reporting_compliance.permission.get_doctype_permission_query_conditions"
+	}
 
 # DocType Class
 # ---------------
@@ -225,22 +225,22 @@ before_request = [
 
 # user_data_fields = [
 # 	{
-# 		"doctype": "{doctype_1}",
-# 		"filter_by": "{filter_by}",
-# 		"redact_fields": ["{field_1}", "{field_2}"],
+# 		"doctype": "{}",
+# 		"filter_by": "{}",
+# 		"redact_fields": ["{}", "{}"],
 # 		"partial": 1,
 # 	},
 # 	{
-# 		"doctype": "{doctype_2}",
-# 		"filter_by": "{filter_by}",
+# 		"doctype": "{}",
+# 		"filter_by": "{}",
 # 		"partial": 1,
 # 	},
 # 	{
-# 		"doctype": "{doctype_3}",
+# 		"doctype": "{}",
 # 		"strict": False,
 # 	},
 # 	{
-# 		"doctype": "{doctype_4}"
+# 		"doctype": "{}"
 # 	}
 # ]
 

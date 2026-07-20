@@ -13,8 +13,8 @@ FINANCE_DASHBOARD_METHODS = {
 	"omnexa_vehicle_finance": "omnexa_vehicle_finance.api.get_regulatory_dashboard",
 	"omnexa_mortgage_finance": "omnexa_mortgage_finance.api.get_regulatory_dashboard",
 	"omnexa_factoring": "omnexa_factoring.api.get_regulatory_dashboard",
-	"omnexa_sme_retail_finance": "omnexa_sme_retail_finance.api.get_regulatory_dashboard",
-}
+	"omnexa_sme_retail_finance": "omnexa_sme_retail_finance.api.get_regulatory_dashboard"
+	}
 
 
 @frappe.whitelist()
@@ -41,9 +41,8 @@ def get_finance_super_dashboard() -> dict:
 						"policies_pending": 0,
 						"policies_approved": 0,
 						"policies_rejected": 0,
-						"snapshots_total": 0,
-					},
-				}
+						"snapshots_total": 0}
+	}
 			)
 
 	total_apps = len(apps)
@@ -53,10 +52,12 @@ def get_finance_super_dashboard() -> dict:
 		"summary": {
 			"apps_count": total_apps,
 			"average_compliance_score": int(total_score / total_apps) if total_apps else 0,
-			"policies_total": sum(int((x.get("governance") or {}).get("policies_total", 0) or 0) for x in apps),
-			"policies_pending": sum(int((x.get("governance") or {}).get("policies_pending", 0) or 0) for x in apps),
-			"snapshots_total": sum(int((x.get("governance") or {}).get("snapshots_total", 0) or 0) for x in apps),
-		},
+			"policies_total": sum(int((x.get("governance") or {
+	}).get("policies_total", 0) or 0) for x in apps),
+			"policies_pending": sum(int((x.get("governance") or {
+	}).get("policies_pending", 0) or 0) for x in apps),
+			"snapshots_total": sum(int((x.get("governance") or {
+	}).get("snapshots_total", 0) or 0) for x in apps)},
 	}
 
 

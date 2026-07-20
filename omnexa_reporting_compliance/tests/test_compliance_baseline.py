@@ -48,7 +48,8 @@ class TestComplianceBaseline(FrappeTestCase):
 			(controls_execute, None),
 			(failed_execute, None),
 			(open_execute, None),
-			(evidence_execute, {"older_than_days": 0}),
+			(evidence_execute, {"older_than_days": 0
+	}),
 		):
 			result = fn(filters)
 			cols, rows = result[0], result[1]
