@@ -1,6 +1,7 @@
 # Copyright (c) 2026, Omnexa and contributors
 # License: MIT. See license.txt
 
+import json
 import os
 
 import frappe
@@ -48,4 +49,15 @@ def after_migrate():
 		os.path.join(rc, "report", "evidence_aging", "evidence_aging.json"),
 	]
 	for path in json_paths:
+		with open(path, encoding="utf-8") as handle:
+			payload = json.load(handle) or {}
+		if isinstance(payload, dict) and payload.get("name") and not payload.get("doctype") and "/workspace/" in path.replace("\\", "/"):
+			if frappe.db.exists("Workspace", payload["name"]):
+				workspace = frappe.get_doc("Workspace", payload["name"])
+				workspace.update(payload)
+				workspace.save(ignore_permissions=True)
+			else:
+				payload["doctype"] = "Workspace"
+				frappe.get_doc(payload).insert(ignore_permissions=True)
+			continue
 		import_file_by_path(path, force=True)
