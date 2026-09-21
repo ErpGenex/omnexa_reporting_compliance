@@ -1,8 +1,8 @@
-Access denied. You do not have access to Reporting Compliance.,بند واجهة
+Access denied. You do not have access to Reporting Compliance.,الوصول مرفوض . أنت يفعل لا لديه وصول إلى تقارير امتثال.
 Accounting,المحاسبة
 Accounts Payable,الذمم الدائنة
 Accounts Receivable,الذمم المدينة
-Action Plan,بند واجهة
+Action Plan,إجراء الخطة
 Actions,إجراءات
 Active,نشط
 Administrator,المسؤول
@@ -12,7 +12,9 @@ All,الكل
 All activities,كل الأنشطة
 All branches,كل الفروع
 ALM,إدارة الأصول والخصوم
-App Scope (optional),بند واجهة
+API,واجهة API
+App Scope (optional),تطبيق نطاق (اختياري)
+APPROVED,معتمد
 Asset Insurance,تأمين الأصول
 Assigned To,مُسند إلى
 Assigned To Me,المُسند إليّ
@@ -37,18 +39,18 @@ Card Break,قسم
 Chart,مخطط
 Chart of Accounts,دليل الحسابات
 Closed,مغلق
-Closed On,مغلق On
+Closed On,مغلق في
 Collected On,مجمّع في
 Commission Accrual,استحقاق العمولات
 Commission Schedule,جدول العمولات
 Company,الشركة
 Completed,مكتمل
-Completed On,مكتمل On
+Completed On,مكتمل في
 Compliance checks complete,اكتملت فحوصات الامتثال
 Compliance Control,امتثال التحكم
 Compliance Control Register,سجل امتثال التحكم
-Compliance Control Test,بند واجهة
-Compliance Control Test Register,سجل بند واجهة
+Compliance Control Test,امتثال التحكم فحص
+Compliance Control Test Register,سجل امتثال التحكم فحص
 Compliance Evidence,امتثال دليل
 Compliance Evidence Register,سجل امتثال دليل
 Compliance Exception,امتثال استثناء
@@ -65,10 +67,10 @@ Construction & Engineering,المقاولات والهندسة
 Consumer Finance,التمويل الاستهلاكي
 Control,التحكم
 Control Owner,التحكم المالك
-Control Test,بند واجهة
+Control Test,التحكم فحص
 Control Title,التحكم العنوان
-Controls,بند واجهة
-Controls Coverage,بند واجهة
+Controls,ضوابط
+Controls Coverage,Controls Coverage
 Core ERP,ERP الأساسي
 Cost Center,مركز التكلفة
 Country,الدولة
@@ -91,6 +93,7 @@ Development Project,مشروع تطوير
 Development Project Register,سجل مشاريع التطوير
 Development project register,سجل مشاريع التطوير
 Documents & Integration,المستندات والتكامل
+DRAFT,مسودة
 Draft,مسودة
 Due Date,تاريخ الاستحقاق
 E-Invoice,الفاتورة الإلكترونية
@@ -106,13 +109,13 @@ ERPGENEX — Dashboard,ERPGENEX — لوحة المعلومات
 Escalation Rule,قاعدة تصعيد الإيجار
 Event,حدث
 Evidence,دليل
-Evidence Aging,بند واجهة
-Example: omnexa_trading,بند واجهة
+Evidence Aging,Evidence Aging
+Example: omnexa_trading,Example: omnexa_trading
 Exception,استثناء
 Executive Dashboard,لوحة المدير التنفيذية
 Explore this workspace,استكشف مساحة العمل
 Factoring,التخصيم
-Fail,بند واجهة
+Fail,Fail
 Failed Control Tests,فشل التحكم فحوص
 Field PWA,تطبيق الميدان
 Filters,المرشحات
@@ -143,11 +146,11 @@ IFRS 16 Liability,التزام الإيجار IFRS 16
 In Progress,قيد التنفيذ
 Industry Solutions,حلول القطاعات
 Insights,رؤى وتحليلات
-Invalid Company.,بند واجهة
-Invalid Control Test.,بند واجهة
-Invalid Control.,بند واجهة
-Invalid Exception.,بند واجهة
-Invalid Remediation.,بند واجهة
+Invalid Company.,الشركة. غير صالح
+Invalid Control Test.,التحكم فحص. غير صالح
+Invalid Control.,التحكم. غير صالح
+Invalid Exception.,استثناء. غير صالح
+Invalid Remediation.,معالجة. غير صالح
 Inventory & development context,المخزون وسياق التطوير
 Inventory KPI Dashboard,لوحة مؤشرات المخزون
 Inventory KPIs,مؤشرات المخزون
@@ -179,7 +182,7 @@ My work,عملي
 Name,الاسم
 New,جديد
 None,لا شيء
-Not Applicable,بند واجهة
+Not Applicable,Not Applicable
 Notes,ملاحظات
 Notifications,الإشعارات
 Number Card,بطاقة رقمية
@@ -191,9 +194,9 @@ Omnexa Sales Settings,إعدادات مبيعات Omnexa
 Omnexa Settings,إعدادات Omnexa
 Omnexa Stock Settings,إعدادات مخزون Omnexa
 Open,مفتوح
-Open Remediations,بند واجهة
+Open Remediations,Open Remediations
 Open report Compliance Exceptions Dashboard,فتح تقرير لوحة استثناءات الامتثال
-Opened On,بند واجهة
+Opened On,Opened On
 Operating Scenarios,سيناريوهات التشغيل
 Operational Risk,المخاطر التشغيلية
 Other,أخرى
@@ -202,10 +205,12 @@ Overview,نظرة عامة
 Owner,المالك
 Owner reporting & trust accounting,تقارير الملاك والحسابات الائتمانية
 Owner Statement,كشف حساب المالك
-Pass,بند واجهة
+Pass,Pass
 Payment Entry,سند قبض/صرف
 Payment Plan Item,بند خطة السداد
+PENDING,قيد الانتظار
 Pending,قيد الانتظار
+PENDING_APPROVAL,قيد الموافقة
 Permit Milestone,معلم التصريح
 Platform & Administration,المنصة والإدارة
 PMC Lease Liability Schedule,جدول التزام الإيجار IFRS 16
@@ -244,9 +249,10 @@ RE Unit Inventory,مخزون وحدات التطوير
 RE unit inventory (sales),مخزون وحدات البيع
 RE Unit Inventory Overview,نظرة عامة على مخزون الوحدات
 Real Estate,العقارات
-Reference DocType (optional),بند واجهة
-Reference Name (optional),بند واجهة
+Reference DocType (optional),Reference Doc Type (optional)
+Reference Name (optional),المرجع الاسم (اختياري)
 Refresh,تحديث
+REJECTED,مرفوض
 Reload,إعادة تحميل
 Remediation,معالجة
 Rent Aging,أعمار الإيجارات
@@ -256,16 +262,16 @@ Rent Roll,سجل الإيجارات
 Rental Contract,عقد إيجار
 Rental contract register,سجل عقود الإيجار
 Report,تقرير
-Reporting Compliance Document Summary,ملخص بند واجهة
+Reporting Compliance Document Summary,ملخص تقارير امتثال مستند
 Reservation register,سجل الحجوزات
 Reservations & unit holds,الحجوزات وحجز الوحدات
 Resolved,محلول
 Restaurant,المطاعم
 Result,النتيجة
-Retired,بند واجهة
+Retired,متقاعد
 "Return here for shortcuts, charts, and lists for **Audit & Compliance**.",ارجع هنا للاختصارات والمخططات والقوائم لـ **التدقيق والامتثال**.
 "Return here for shortcuts, charts, and lists for **Core ERP**.",ارجع هنا للاختصارات والمخططات والقوائم لـ **ERP الأساسي**.
-Risk Level,بند واجهة
+Risk Level,مخاطر مستوى
 Sales Booking,حجز بيع
 Sales booking register,سجل حجوزات البيع
 Sales Commission Accrual,استحقاق عمولات المبيعات
@@ -291,14 +297,16 @@ Submit,إرسال
 Supplier,المورد
 System Manager,مدير النظام
 Task List,قائمة المهام
-Test,بند واجهة
-Test Date,بند واجهة
-Tester,بند واجهة
+Tenant (Customer),المستأجر (العميل)
+Test,فحص
+Test Date,تاريخ فحص
+Tester,مختبر
 This Month,هذا الشهر
 This Week,هذا الأسبوع
 Timezone,المنطقة الزمنية
 Today,اليوم
 ToDo,مهمة
+Total,الإجمالي
 Tourism,السياحة
 Trading,التجارة
 Trading & Manufacturing,التجارة والتصنيع
@@ -312,6 +320,7 @@ Unit Reservation Register,سجل حجز الوحدات
 Update,تحديث
 Vehicle Finance,تمويل المركبات
 Warehouse,المستودع
+Working paper — not a statutory audit opinion,ورقة عمل — ليست رأي تدقيق قانوني
 Workspace,مساحة العمل
 Workspaces,مساحات العمل
 Yesterday,أمس
